@@ -15,7 +15,7 @@ title: 关于
 ## 找我
 
 - GitHub：[@xiaoming-0x0](https://github.com/xiaoming-0x0)
-- 邮箱：hello@example.com
+- 邮箱：177674883@qq.com
 
 ## 关于这个站
 
