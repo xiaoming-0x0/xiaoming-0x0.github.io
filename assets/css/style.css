@@ -222,13 +222,68 @@ img { max-width: 100%; }
   margin: 16px 0 12px;
   font-weight: 750;
   text-wrap: balance;
+  /* 宽度贴合文字，逐字揭示的步长才对得齐 */
+  width: fit-content;
+  max-width: 100%;
 }
 .hero h1 .hl {
-  background: linear-gradient(100deg, var(--accent), var(--accent-3) 55%, var(--accent-2));
+  background-image: linear-gradient(100deg,
+    var(--accent) 0%,
+    var(--accent-3) 32%,
+    var(--accent-2) 58%,
+    var(--accent-3) 82%,
+    var(--accent) 100%);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation: gradientFlow 9s linear infinite;
 }
+
+/* 渐变沿着文字缓慢流动：位移刚好一个图片宽度，首尾同色，所以是无缝循环 */
+@keyframes gradientFlow {
+  from { background-position: 0% 50%; }
+  to   { background-position: 200% 50%; }
+}
+
+/* 标题从左往右扫出，配一条跟随的亮边。
+   直接挂在 h1 上，页面首绘就开始，不依赖 JS，也不会有二次闪烁。 */
+.hero h1 {
+  /* 羽化遮罩从左往右拉开：边缘是一条 12% 宽的柔光带，不是硬切线 */
+  -webkit-mask-image: linear-gradient(90deg, #000 0 43%, transparent 55%, transparent 100%);
+  mask-image: linear-gradient(90deg, #000 0 43%, transparent 55%, transparent 100%);
+  -webkit-mask-size: 260% 100%;
+  mask-size: 260% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  will-change: mask-position, transform;
+  animation: titleReveal 2.4s linear .12s both;
+}
+
+/* 匀速度前进，只有极轻微的上浮，单一的位移让整个动作没有突变 */
+@keyframes titleReveal {
+  from {
+    -webkit-mask-position: 104% 0;
+    mask-position: 104% 0;
+    transform: translateY(4px);
+  }
+  to {
+    -webkit-mask-position: 0% 0;
+    mask-position: 0% 0;
+    transform: none;
+  }
+}
+
+/* 顶部环境光缓慢呼吸，让整块背景活起来 */
+body::before {
+  animation: auraDrift 28s ease-in-out infinite alternate;
+}
+@keyframes auraDrift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(0, -20px, 0) scale(1.07); }
+}
+
 .hero p { margin: 0; max-width: 62ch; color: var(--text-dim); font-size: 15.5px; }
 
 /* ---------- 工具条 ---------- */
