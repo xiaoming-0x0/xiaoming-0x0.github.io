@@ -153,7 +153,8 @@ python scripts/build.py
 ├── 404.html              找不到页面
 ├── site.config.json      ★ 站点信息都在这里
 ├── posts/                ★ 文章：一个 .md 一篇
-│   └── index.json        自动生成的索引，不要手改
+│   ├── index.json        自动生成的索引，不要手改
+│   └── content.json      自动生成的正文备份（.md 被平台改写时兜底）
 ├── pages/
 │   └── about.md          关于页内容
 ├── images/               ★ 图片都放这里
@@ -213,6 +214,13 @@ python scripts/build.py
 
 **文章点开是 404**
 检查三点：文件名和链接是否一致、`draft` 是不是 `true`、`posts/index.json` 是不是最新的。
+
+**文章页显示「加载失败 · HTTP 404 · ./posts/xxx.md」**
+托管平台的 Jekyll 把 `.md` 编译成 `.html` 了，所以直接请求 `.md` 会 404。
+根目录缺 `.nojekyll` 时就会这样（分支部署最容易遇到）。
+
+修法：仓库根目录新建一个空文件 `.nojekyll`（Add file → Create new file，文件名就叫 `.nojekyll`），提交即可。
+当前版本已带兜底：读不到 `.md` 会自动改用构建生成的 `posts/content.json`，所以更新一次文件也能好。
 
 **Access 被拒 / 部署报错 "Pages site not found"**
 Settings → Pages 里的 Source 还没切到 **GitHub Actions**。
