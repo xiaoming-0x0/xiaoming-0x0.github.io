@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>小明的博客</title>
+    <link>https://xiaoming-0x0.github.io</link>
+    <description>小明的个人博客：技术笔记、折腾记录和一些不成熟的想法。</description>
+    <language>zh-CN</language>
+    <managingEditor>小明</managingEditor>
+    <lastBuildDate>2026-11-10 21:14:18 +0800</lastBuildDate>
+    <item>
+      <title>你好，世界</title>
+      <link>https://xiaoming-0x0.github.io/post.html?p=hello-world</link>
+      <guid isPermaLink="false">hello-world</guid>
+      <pubDate>2026-11-08 00:00:00 +0800</pubDate>
+      <description>第一篇。说说这个博客为什么长这样，以及你以后只需要做两件事：写 Markdown、丢图片。</description>
+    </item>
+    <item>
+      <title>Markdown 速查：写文章会用到的全部语法</title>
+      <link>https://xiaoming-0x0.github.io/post.html?p=markdown-cheatsheet</link>
+      <guid isPermaLink="false">markdown-cheatsheet</guid>
+      <pubDate>2026-11-05 00:00:00 +0800</pubDate>
+      <description>一份随手可查的 Markdown 语法表，覆盖标题、列表、代码、表格、图片和折叠块。</description>
+    </item>
+    <item>
+      <title>这套博客是怎么跑起来的</title>
+      <link>https://xiaoming-0x0.github.io/post.html?p=how-it-works</link>
+      <guid isPermaLink="false">how-it-works</guid>
+      <pubDate>2026-11-01 00:00:00 +0800</pubDate>
+      <description>从一次推送到一个能访问的网址，中间发生了什么；以及出问题时该看哪里。</description>
+    </item>
+  </channel>
+</rss>
