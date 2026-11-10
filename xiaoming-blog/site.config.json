@@ -1,0 +1,32 @@
+{
+  "title": "小明的博客",
+  "subtitle": "记录代码、折腾与思考",
+  "description": "小明的个人博客：技术笔记、折腾记录和一些不成熟的想法。",
+  "author": "小明",
+  "url": "https://xiaoming-0x0.github.io",
+  "repo": "xiaoming-0x0/xiaoming-0x0.github.io",
+  "lang": "zh-CN",
+  "heroTitle": "在代码与生活之间，*写点什么*",
+  "heroText": "这里放技术笔记、踩坑记录和生活碎片。所有文章都是 Markdown 文件，图片直接拖进 images 文件夹。",
+  "footer": "用 Markdown 写作，用一个文件夹做博客。",
+  "nav": [
+    {
+      "label": "首页",
+      "href": "index.html"
+    },
+    {
+      "label": "标签",
+      "href": "tags.html"
+    },
+    {
+      "label": "关于",
+      "href": "about.html"
+    }
+  ],
+  "social": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/xiaoming-0x0"
+    }
+  ]
+}
